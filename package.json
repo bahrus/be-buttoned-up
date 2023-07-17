@@ -1,0 +1,11 @@
+{
+  "name": "be-buttoned-up",
+  "version": "0.0.0",
+  "description": "```html\r <button popuptarget=menu be-buttoned-up>&#9776;</button>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
