@@ -1,7 +1,7 @@
 # be-buttoned-up
 
 ```html
-<button popuptarget=menu be-buttoned-up>&#9776;</button>
+<button popovertarget=menu be-buttoned-up>&#9776;</button>
 
 <menu id=menu>
     <button name=doSomething>Do something</button>
