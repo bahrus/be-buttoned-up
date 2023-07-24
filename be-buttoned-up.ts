@@ -19,7 +19,7 @@ export class BeButtonedUp  extends BE<AP, Actions, HTMLButtonElement> implements
             if(target instanceof HTMLButtonElement){
                 if(target.value){
                     enhancedElement.value = target.value;
-                    popoverTarget.hidePopover();
+                    (popoverTarget as any).hidePopover();
                     enhancedElement.dispatchEvent(new Event('change'));
                 }
             }
