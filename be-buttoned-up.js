@@ -16,6 +16,7 @@ export class BeButtonedUp extends BE {
             if (target instanceof HTMLButtonElement) {
                 if (target.value) {
                     enhancedElement.value = target.value;
+                    popoverTarget.hidePopover();
                     enhancedElement.dispatchEvent(new Event('change'));
                 }
             }
