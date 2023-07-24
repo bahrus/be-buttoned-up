@@ -1,5 +1,10 @@
 # be-buttoned-up
 
+[![Playwright Tests](https://github.com/bahrus/be-buttoned-up/actions/workflows/CI.yml/badge.svg?branch=baseline)](https://github.com/bahrus/be-buttoned-up/actions/workflows/CI.yml)
+[![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/be-buttoned-up?style=for-the-badge)](https://bundlephobia.com/result?p=be-buttoned-up)
+<img src="http://img.badgesize.io/https://cdn.jsdelivr.net/npm/be-buttoned-up?compression=gzip">
+<a href="https://nodei.co/npm/be-buttoned-up/"><img src="https://nodei.co/npm/be-buttoned-up.png"></a>
+
 ```html
 <button popovertarget=menu be-buttoned-up>&#9776;</button>
 
