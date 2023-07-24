@@ -1,6 +1,6 @@
 {
   "name": "be-buttoned-up",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Give button dropdown abilities.",
   "keywords": [
     "web components",
@@ -30,7 +30,6 @@
     "@playwright/test": "1.36.1",
     "may-it-serve": "0.0.5"
   },
-
   "scripts": {
     "serve": "node node_modules/may-it-serve/serve.js",
     "test": "playwright test",
