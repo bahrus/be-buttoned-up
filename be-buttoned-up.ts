@@ -4,19 +4,28 @@ import {XE} from 'xtal-element/XE.js';
 import {Actions, AllProps, AP, PAP, ProPAP, POA} from './types';
 import {register} from 'be-hive/register.js';
 
-export class BeButtonedUp  extends BE<AP, Actions> implements Actions{
+export class BeButtonedUp  extends BE<AP, Actions, HTMLButtonElement> implements Actions{
     static  override get beConfig(){
         return {
             parse: true,
             //primaryProp: 'to'
         } as BEConfig
     }
-    override async attach(enhancedElement: Element, enhancementInfo: EnhancementInfo){
+    override async attach(enhancedElement: HTMLButtonElement, enhancementInfo: EnhancementInfo){
         super.attach(enhancedElement, enhancementInfo);
         const popoverTarget = (enhancedElement as any).popoverTargetElement as HTMLElement;
-        popoverTarget.addEventListener('toggle', e => {
-            console.log(e);
-        })
+        popoverTarget.addEventListener('click', e => {
+            const target = e.target as Element;
+            if(target instanceof HTMLButtonElement){
+                if(target.value){
+                    enhancedElement.value = target.value;
+                    enhancedElement.dispatchEvent(new Event('change'));
+                }
+            }
+        });
+        // popoverTarget.addEventListener('toggle', e => {
+        //     console.log(e);
+        // })
     }
 }
 
@@ -24,7 +33,7 @@ export interface BeButtonedUp extends AllProps{}
 
 const tagName = 'be-buttoned-up';
 const ifWantsToBe = 'buttoned-up';
-const upgrade = '*';
+const upgrade = 'button';
 
 const xe = new XE<AP, Actions>({
     config: {

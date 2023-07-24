@@ -11,14 +11,23 @@ export class BeButtonedUp extends BE {
     async attach(enhancedElement, enhancementInfo) {
         super.attach(enhancedElement, enhancementInfo);
         const popoverTarget = enhancedElement.popoverTargetElement;
-        popoverTarget.addEventListener('toggle', e => {
-            console.log(e);
+        popoverTarget.addEventListener('click', e => {
+            const target = e.target;
+            if (target instanceof HTMLButtonElement) {
+                if (target.value) {
+                    enhancedElement.value = target.value;
+                    enhancedElement.dispatchEvent(new Event('change'));
+                }
+            }
         });
+        // popoverTarget.addEventListener('toggle', e => {
+        //     console.log(e);
+        // })
     }
 }
 const tagName = 'be-buttoned-up';
 const ifWantsToBe = 'buttoned-up';
-const upgrade = '*';
+const upgrade = 'button';
 const xe = new XE({
     config: {
         tagName,
