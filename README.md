@@ -24,7 +24,7 @@ Reference:  https://developer.chrome.com/blog/introducing-popover-api/
 
 ## Running locally
 
-1.  Do a git clone or a git fork of repository https://github.com/bahrus/be-committed
+1.  Do a git clone or a git fork of repository https://github.com/bahrus/be-buttoned-up
 2.  Install node.js
 3.  Run "npm install" from location of folder created in step 1.
 4.  Run npm run serve.  Open browser to http://localhost:3030/demo/
