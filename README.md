@@ -5,6 +5,8 @@
 <img src="http://img.badgesize.io/https://cdn.jsdelivr.net/npm/be-buttoned-up?compression=gzip">
 <a href="https://nodei.co/npm/be-buttoned-up/"><img src="https://nodei.co/npm/be-buttoned-up.png"></a>
 
+Allow a button to delegate to a sub menu of of command buttons to select from.
+
 ```html
 <button popovertarget=menu be-buttoned-up>&#9776;</button>
 
