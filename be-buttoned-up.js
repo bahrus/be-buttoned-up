@@ -1,6 +1,5 @@
 import { BE, propDefaults, propInfo } from 'be-enhanced/BE.js';
 import { XE } from 'xtal-element/XE.js';
-import { register } from 'be-hive/register.js';
 export class BeButtonedUp extends BE {
     static get beConfig() {
         return {
@@ -26,9 +25,7 @@ export class BeButtonedUp extends BE {
         // })
     }
 }
-const tagName = 'be-buttoned-up';
-const ifWantsToBe = 'buttoned-up';
-const upgrade = 'button';
+export const tagName = 'be-buttoned-up';
 const xe = new XE({
     config: {
         tagName,
@@ -42,4 +39,3 @@ const xe = new XE({
     },
     superclass: BeButtonedUp
 });
-register(ifWantsToBe, upgrade, tagName);

@@ -8,7 +8,7 @@
 		"strict": true
 	},
 	"files":[
-		"be-buttoned-up.ts"
+		"behivior.ts"
 	],
 	"exclude":[
 		"node_modules"

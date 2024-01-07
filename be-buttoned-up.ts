@@ -2,10 +2,9 @@ import {BE, propDefaults, propInfo} from 'be-enhanced/BE.js';
 import {BEConfig, EnhancementInfo} from 'be-enhanced/types';
 import {XE} from 'xtal-element/XE.js';
 import {Actions, AllProps, AP, PAP, ProPAP, POA} from './types';
-import {register} from 'be-hive/register.js';
 
 export class BeButtonedUp  extends BE<AP, Actions, HTMLButtonElement> implements Actions{
-    static  override get beConfig(){
+    static get beConfig(){
         return {
             parse: true,
             //primaryProp: 'to'
@@ -32,9 +31,8 @@ export class BeButtonedUp  extends BE<AP, Actions, HTMLButtonElement> implements
 
 export interface BeButtonedUp extends AllProps{}
 
-const tagName = 'be-buttoned-up';
-const ifWantsToBe = 'buttoned-up';
-const upgrade = 'button';
+export const tagName = 'be-buttoned-up';
+
 
 const xe = new XE<AP, Actions>({
     config: {
@@ -52,5 +50,4 @@ const xe = new XE<AP, Actions>({
     superclass: BeButtonedUp
 });
 
-register(ifWantsToBe, upgrade, tagName);
 
