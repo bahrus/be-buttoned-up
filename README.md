@@ -34,7 +34,7 @@ Reference:  https://developer.chrome.com/blog/introducing-popover-api/
 ## Using from ESM Module:
 
 ```JavaScript
-import 'be-committed/be-buttoned-up.js';
+import 'be-buttoned-up/be-buttoned-up.js';
 ```
 
 ## Using from CDN:
