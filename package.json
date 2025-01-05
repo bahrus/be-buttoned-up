@@ -7,19 +7,23 @@
     "web component",
     "custom elements",
     "custom element",
-    "built-in"
+    "enhancement",
+    "behavior"
   ],
   "main": "be-buttoned-up.js",
   "module": "be-buttoned-up.js",
   "exports": {
     ".": "./be-buttoned-up.js",
-    "./be-buttoned-up.js": "./be-buttoned-up.js"
+    "./be-buttoned-up.js": "./be-buttoned-up.js",
+    "./emc.js": "./emc.js",
+    "./🗽.js": "./🗽.js"
   },
   "files": [
     "*.js",
-    "types.d.ts"
+    "types.d.ts",
+    "README.md"
   ],
-  "types": "./types.d.ts",
+  "types": "./ts-refs/be-buttoned-up/types.d.ts",
   "dependencies": {
     "be-enhanced": "0.0.163",
     "be-hive": "0.0.243",
@@ -41,5 +45,8 @@
     "url": "git+https://github.com/bahrus/be-buttoned-up.git"
   },
   "author": "anderson.bruce.b@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahrus/be-a-beacon/issues"
+  }
 }
