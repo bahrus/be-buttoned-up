@@ -5,7 +5,7 @@
 <img src="http://img.badgesize.io/https://cdn.jsdelivr.net/npm/be-buttoned-up?compression=gzip">
 <a href="https://nodei.co/npm/be-buttoned-up/"><img src="https://nodei.co/npm/be-buttoned-up.png"></a>
 
-Allow a button to delegate to a sub menu of of command buttons to select from.
+Allow a button to delegate to a sub menu of command buttons to select from.
 
 ```html
 <button popovertarget=menu be-buttoned-up>&#9776;</button>
@@ -29,7 +29,7 @@ Reference:  https://developer.chrome.com/blog/introducing-popover-api/
 1.  Do a git clone or a git fork of repository https://github.com/bahrus/be-buttoned-up
 2.  Install node.js
 3.  Run "npm install" from location of folder created in step 1.
-4.  Run npm run serve.  Open browser to http://localhost:3030/demo/
+4.  Run npm run serve.  Open browser to http://localhost:8000/demo/
 
 ## Using from ESM Module:
 

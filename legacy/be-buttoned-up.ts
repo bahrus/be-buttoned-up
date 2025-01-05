@@ -1,7 +1,7 @@
 import {BE, propDefaults, propInfo} from 'be-enhanced/BE.js';
 import {BEConfig, EnhancementInfo} from 'be-enhanced/types';
 import {XE} from 'xtal-element/XE.js';
-import {Actions, AllProps, AP, PAP, ProPAP, POA} from './types';
+import {Actions, AllProps, AP, PAP, ProPAP, POA} from '../types';
 
 export class BeButtonedUp  extends BE<AP, Actions, HTMLButtonElement> implements Actions{
     static get beConfig(){
@@ -10,6 +10,7 @@ export class BeButtonedUp  extends BE<AP, Actions, HTMLButtonElement> implements
             //primaryProp: 'to'
         } as BEConfig
     }
+    
     override async attach(enhancedElement: HTMLButtonElement, enhancementInfo: EnhancementInfo){
         super.attach(enhancedElement, enhancementInfo);
         const popoverTarget = (enhancedElement as any).popoverTargetElement as HTMLElement;
