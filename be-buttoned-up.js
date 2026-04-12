@@ -20,7 +20,7 @@ class BeButtonedUp extends BE {
             ...propInfo
         },
         compacts: {
-            when_eventName_changes_invoke_hydrate: 0,
+            when_eventName_changes_call_hydrate: 0,
         },
         positractions: [resolved, rejected],
         actions: {}
