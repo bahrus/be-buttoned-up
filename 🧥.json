@@ -1,0 +1,13 @@
+{
+    "enhConfig": {
+        "enhKey": "🧥",
+        "spawn": "be-buttoned-up/be-buttoned-up.js",
+        "withAttrs": {
+            "base": "🧥",
+            "eventName": "${base}-event-name",
+            "_closeOnSelect": {
+                "instanceOf": "Boolean"
+            }
+        }
+    }
+}

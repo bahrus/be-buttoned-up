@@ -1,0 +1,33 @@
+{
+    "enhConfig": {
+        "enhKey": "BeButtonedUp",
+        "spawn": "be-buttoned-up/be-buttoned-up.js",
+        "withAttrs": {
+            "base": "be-buttoned-up",
+            "eventName": "${base}-event-name",
+            "_closeOnSelect": {
+                "instanceOf": "Boolean"
+            }
+        }
+    },
+    "customData": {
+        "weakRef": {
+            "properties": [
+                "enhancedElement"
+            ]
+        },
+        "actions": {
+            "hydrate": {
+                "ifAllOf": [
+                    "enhancedElement",
+                    "eventName"
+                ]
+            }
+        },
+        "handlers": {},
+        "compacts": {},
+        "defaultPropVals": {
+            "eventName": "click"
+        }
+    }
+}
