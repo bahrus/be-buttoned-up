@@ -24,12 +24,19 @@ What this does:
 
 Reference:  https://developer.chrome.com/blog/introducing-popover-api/
 
-## Running locally
+## Viewing Demos Locally
 
-1.  Do a git clone or a git fork of repository https://github.com/bahrus/be-buttoned-up
-2.  Install node.js
-3.  Run "npm install" from location of folder created in step 1.
-4.  Run npm run serve.  Open browser to http://localhost:8000/demo/
+1. Install git
+2. Fork/clone this repo
+3. Install node.js
+4. Open command window to the folder where you cloned this repo
+5. `git submodule add https://github.com/bahrus/types.git types`
+6. `git submodule update --init --recursive`
+7. `npm install`
+8. `npm run build`
+9. `npm run serve`
+10. Open http://localhost:8000/demo/ in a Chromium-based browser
+
 
 ## Using from ESM Module:
 
