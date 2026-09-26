@@ -9,5 +9,26 @@
                 "instanceOf": "Boolean"
             }
         }
+    },
+    "customData": {
+        "weakRef": {
+            "properties": [
+                "enhancedElement"
+            ]
+        },
+        "actions": {
+            "hydrate": {
+                "ifAllOf": [
+                    "enhancedElement",
+                    "eventName",
+                    "initialized"
+                ]
+            }
+        },
+        "handlers": {},
+        "compacts": {},
+        "defaultPropVals": {
+            "eventName": "click"
+        }
     }
 }

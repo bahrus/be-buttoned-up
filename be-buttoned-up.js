@@ -1,15 +1,9 @@
 // @ts-check
 /** @import {Actions, PAP, AllProps, AP} from './types/be-buttoned-up/types' */;
 /** @import {RoundaboutOptions} from './types/roundabout/types' */;
-/** @import {ElementEnhancementGateway} from './types/assign-gingerly/types' */;
+/** @import {ElementEnhancementGateway, SpawnContext} from './types/assign-gingerly/types' */;
 /** @import {EMC} from './types/mount-observer/types' */;
 /** @import {RAConfig} from './types/roundabout/types' */;
-/**
- * @type {EMC<any, AllProps, Element, RAConfig<AllProps, Actions>>}
- */
-import emc from './emc.json' with {type: 'json'};
-
-const {customData} = emc;
 
 /**
  * @implements {Actions}
@@ -19,20 +13,21 @@ export class BeButtonedUp {
     /**
      * @this {AllProps & Actions}
      * @param {Element & ElementEnhancementGateway} enhancedElement 
-     * @param {*} ctx 
-     * @param {AllProps} initVals 
+     * @param {SpawnContext} ctx 
+     * @param {PAP} initVals 
      */
     constructor(enhancedElement, ctx, initVals){
-        this.init(this, enhancedElement, initVals);
+        this.init(this, enhancedElement, ctx, initVals);
     }
 
     /**
      * @param {AllProps} self 
      * @param {Element & ElementEnhancementGateway} enhancedElement 
+     * @param {SpawnContext} ctx 
      * @param {PAP} initVals 
      */
-    async init(self, enhancedElement, initVals){
-        const {defaultPropVals} = customData;
+    async init(self, enhancedElement, ctx, initVals){
+        const {customData} = /** @type {EMC<any, AllProps, Element, RAConfig<AllProps, Actions>>} */ (ctx.emc || ctx.config);
         /**
          * @type {RoundaboutOptions}
          */
@@ -41,15 +36,17 @@ export class BeButtonedUp {
             vm: self,
             initialPropVals: {
                 enhancedElement,
-                ...defaultPropVals,
+                ...customData?.defaultPropVals,
                 ...initVals
             }
         };
-        (await import('roundabout-lib/roundabout.js')).roundabout(raOptions);
+        await (await import('roundabout-lib/roundabout.js')).roundabout(raOptions);
+        self.initialized = true;
     }
 
     /**
      * @param {AP} self 
+     * @returns {PAP}
      */
     hydrate(self){
         const { enhancedElement } = self;
@@ -64,5 +61,8 @@ export class BeButtonedUp {
                 }
             }
         });
+        return {
+            resolved: true,
+        };
     }
 }

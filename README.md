@@ -24,6 +24,32 @@ What this does:
 
 Reference:  https://developer.chrome.com/blog/introducing-popover-api/
 
+## Programmatic Attachment (No Attributes)
+
+In client-side-rendered apps, setting attributes is clumsy. The enhancement can be attached without any attribute at all. First register its config once via `def.js`:
+
+```JS
+import { defBeButtonedUp } from 'be-buttoned-up/def.js';
+const emc = await defBeButtonedUp(document.body); // or a shadow root's host, for a scoped registry
+```
+
+### Declarative -- via `enh.set`
+
+```JS
+// only the first write needs to go through .set -- it triggers attachment
+button.enh.set.beButtonedUp.eventName = 'click';
+```
+
+This is order-independent: `.set` may be used *before* `defBeButtonedUp` has registered the config; the spawn is deferred until it does.
+
+### Imperative -- via `enh.get()`
+
+```JS
+const beButtonedUp = button.enh.get(emc);
+```
+
+Either way, the button must still point at its menu via `popovertarget` (or the `popoverTargetElement` property). See [demo/Programmatic/](demo/Programmatic/) for runnable examples.
+
 ## Viewing Demos Locally
 
 1. Install git

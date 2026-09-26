@@ -9,7 +9,7 @@
  */
 export const emc = {
     enhConfig: {
-        enhKey: 'BeButtonedUp',
+        enhKey: 'beButtonedUp',
         spawn: 'be-buttoned-up/be-buttoned-up.js',
         withAttrs: {
             base: 'be-buttoned-up',
@@ -25,7 +25,7 @@ export const emc = {
         },
         actions: {
             hydrate: {
-                ifAllOf: ['enhancedElement', 'eventName']
+                ifAllOf: ['enhancedElement', 'eventName', 'initialized']
             }
         },
         handlers: {},

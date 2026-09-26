@@ -1,6 +1,6 @@
 {
     "enhConfig": {
-        "enhKey": "BeButtonedUp",
+        "enhKey": "beButtonedUp",
         "spawn": "be-buttoned-up/be-buttoned-up.js",
         "withAttrs": {
             "base": "be-buttoned-up",
@@ -20,7 +20,8 @@
             "hydrate": {
                 "ifAllOf": [
                     "enhancedElement",
-                    "eventName"
+                    "eventName",
+                    "initialized"
                 ]
             }
         },

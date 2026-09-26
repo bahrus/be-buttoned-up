@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProgrammaticDeclarativeOutOfSequence</title>
+    <!-- #include virtual="/imports.html" -->
+</head>
+<body>
+    <!-- Properties are set via the `.set` proxy *before* the enhancement
+         config is even registered. `.set` creates a plain placeholder and
+         defers the real spawn until `defBeButtonedUp` registers the config,
+         via EnhancementRegistry.whenDefined. -->
+    <button id="subject" popovertarget="menu">&#9776;</button>
+
+    <menu id="menu" popover>
+        <button id="doSomething" value="doSomething">Do something</button>
+        <button id="doSomethingElse" value="doSomethingElse">Do something else</button>
+    </menu>
+    <output id="selected"></output>
+    <script type=module>
+        import {defBeButtonedUp} from '/def.js';
+        subject.addEventListener('change', () => {
+            selected.value = subject.value;
+        });
+        //only the first call needs to use .set
+        //it triggers the attachment of the enhancement.
+        subject.enh.set.beButtonedUp.eventName = 'click';
+        await defBeButtonedUp(document.body);
+    </script>
+</body>
+</html>

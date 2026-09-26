@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProgrammaticImperative</title>
+    <!-- #include virtual="/imports.html" -->
+</head>
+<body>
+    <!-- Fully imperative attachment: no attribute, no `.set` proxy -- just
+         `enh.get(emc)` plus a direct property assignment. -->
+    <button id="subject" popovertarget="menu">&#9776;</button>
+
+    <menu id="menu" popover>
+        <button id="doSomething" value="doSomething">Do something</button>
+        <button id="doSomethingElse" value="doSomethingElse">Do something else</button>
+    </menu>
+    <output id="selected"></output>
+    <script type=module>
+        import {defBeButtonedUp} from '/def.js';
+        subject.addEventListener('change', () => {
+            selected.value = subject.value;
+        });
+        const emc = await defBeButtonedUp(document.body);
+        const beButtonedUp = subject.enh.get(emc);
+        beButtonedUp.eventName = 'click';
+    </script>
+</body>
+</html>
