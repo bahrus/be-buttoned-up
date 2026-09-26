@@ -25,13 +25,13 @@
   ],
   "types": "./types/be-buttoned-up/types.d.ts",
   "dependencies": {
-    "be-hive": "0.1.16",
-    "mount-observer": "0.1.51",
-    "roundabout-lib": "0.0.35"
+    "be-hive": "0.1.18",
+    "mount-observer": "0.1.53",
+    "roundabout-lib": "0.0.38"
   },
   "devDependencies": {
-    "@playwright/test": "1.62.1",
-    "spa-ssi": "0.0.27"
+    "@playwright/test": "1.63.0",
+    "spa-ssi": "0.0.28"
   },
   "scripts": {
     "build": "node emc.mjs > emc.json && node 🧥.mjs > 🧥.json",
